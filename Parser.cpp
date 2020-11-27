@@ -55,7 +55,11 @@ int FileTest(const char* filename) {
 int Simple(string& str, Var& V) {
     int k = 0;
     int len = str.length();
-    int f = str.find("=");
+    int f = str.find("#");
+    if(f!=-1){
+        str.erase(f);
+    }
+    f = str.find("=");
     int p = str.find("+");
     if (f <= 0 && p == -1) {
         return -1;
